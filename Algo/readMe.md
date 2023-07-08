@@ -14,28 +14,45 @@ This function takes two sets as input, set1 and set2, and returns the sum of all
 
 
 ## Problem 2: Checking Orthogonality of Vectors using Dot Product
+Certainly! Here's the documentation for the JavaScript code:
 
-### dotProduct(v1, v2)
-This procedure calculates the dot (scalar) product of two vectors, v1 and v2. It multiplies each corresponding element of the vectors and accumulates the products. The resulting sum is stored in a variable named `ps`.
+### Introduction
+This code provides functionality to check the orthogonality of vectors using the dot product. It includes a procedure for the dot product calculation and two algorithms to check for orthogonality between pairs of vectors.
 
-#### Parameters
-- `v1`: An array representing the first vector.
-- `v2`: An array representing the second vector.
+### dot_product Procedure
+The `dot_product` procedure calculates the dot product of two vectors, `v1` and `v2`. It iterates over the elements of the vectors and accumulates the product of corresponding elements. The procedure does not return a value but modifies the `ps` variable to store the dot product.
 
-### checkOrthogonality(vectors)
-This function checks for orthogonality among a given set of vectors. It takes an array of vectors as input and iterates through all possible pairs of vectors. For each pair, it calls the `dotProduct` procedure to calculate the dot product. If the dot product is zero, indicating orthogonality, the pair's indices are added to the `orthogonalPairs` array. Finally, the function returns the array of pairs of indices representing the orthogonal vectors.
+### CheckOrthogonality Algorithm
+The `CheckOrthogonality` algorithm checks the orthogonality between pairs of vectors using the dot product procedure. It takes a list of vectors as input and performs a nested loop to compare each pair of vectors. For each pair, it calculates the dot product using the `dot_product` procedure and checks if the dot product is zero. If the dot product is zero, it indicates orthogonality between the vectors. The algorithm outputs a message to the console stating whether the vectors are orthogonal or not.
 
-#### Parameters
-- `vectors`: An array of arrays, where each inner array represents a vector.
+### CheckOrthogonalityWithFunction Algorithm
+The `CheckOrthogonalityWithFunction` algorithm is similar to the `CheckOrthogonality` algorithm, but it uses a function for the dot product calculation. The `dot_product` function is defined within this algorithm. It takes two vectors, `v1` and `v2`, and calculates the dot product by iterating over the elements and accumulating the product. The function returns the dot product value. The algorithm then uses the function to calculate the dot product between pairs of vectors and checks for orthogonality, outputting the result to the console.
 
-#### Returns
-- An array of pairs of indices representing the orthogonal vectors.
+### Usage
+To use the code, follow these steps:
+1. Define the vectors you want to check for orthogonality. Represent each vector as an array of numbers, where each element corresponds to a component of the vector.
+2. Call the `CheckOrthogonality` algorithm or the `CheckOrthogonalityWithFunction` algorithm, passing the vectors as input.
+3. The algorithm will compare each pair of vectors and determine whether they are orthogonal or not. The results will be printed to the console.
 
-## Example Usage
-This section demonstrates example usage of the `checkOrthogonality` function with sample inputs and expected outputs.
+Example usage:
+```javascript
+let vectors = [
+  [1, 0, 2],
+  [0, 2, 0],
+  [3, 1, 4],
+  [2, 2, -2]
+];
 
-For Problem 2:
-- `vectors` is [[1, 0, 2], [0, 2, 0], [3, 1, 4], [2, 2, -2]]
-- The expected output of `checkOrthogonality(vectors)` is [[0, 1], [1, 2]], representing the pairs of indices corresponding to orthogonal vectors.
+console.log("Using CheckOrthogonality:");
+CheckOrthogonality(vectors);
 
-Please note that the code snippets and documentation provided here are based on the updated pseudo code representation, and further adjustments might be necessary if you decide to implement them in a specific programming language.
+console.log("Using CheckOrthogonalityWithFunction:");
+CheckOrthogonalityWithFunction(vectors);
+```
+
+### Output
+The output of the algorithms will be displayed in the console. For each pair of vectors, the code will print a message stating whether the vectors are orthogonal or not.
+
+Please note that this documentation assumes the vectors are represented as arrays, and the code provided follows the structure and logic described in the comments and pseudo code.
+
+This code can be used to efficiently check for orthogonality between pairs of vectors using the dot product, providing a valuable tool for vector analysis and calculations.
